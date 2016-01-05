@@ -84,7 +84,7 @@ namespace FactoryPattern
  
 Imagine how many unit tests I will need to write for this one method in order to achieve 100% coverage....
              
- Unfortunately this is a common occurance & core services is littered with similar examples of
+ Unfortunately this is a common occurrence & core services is littered with similar examples of
              
  * If (ProductCode == "PC") //do x
  * If (ProductCode == "LC") //do Y
@@ -123,16 +123,16 @@ Imagine how many unit tests I will need to write for this one method in order to
             
             var averageCalculator = creatorOfAverageCalulators.CreateCalculator(type);
 
-            //responsibitiy for performing the calculation is pushed down to where it belongs; with each of the concrete implementations of IAverageCalculator
+            //responsibility for performing the calculation is pushed down to where it belongs; with each of the concrete implementations of IAverageCalculator
             
             return averageCalculator.Average(listOfValues);
 
             /*
-             Here we have separated Responsibilities of deciding which implementation to use, and the actual imlementations of those calculations.
+             Here we have separated Responsibilities of deciding which implementation to use, and the actual implementations of those calculations.
              Now, if we want to change how we calculate Mode (the implementation is a bit poor and could use a refactor!):
              - we have no fear of breaking the other calculations
              - we have no fear of breaking the logic that determines which algorithm to use
-             - Each implmentation is independantly testable, as is the factory.
+             - Each implementation is independently testable, as is the factory.
              Also
              - Its easy to add or remove implementations without the breaking the others
              */
